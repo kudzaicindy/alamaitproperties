@@ -42,7 +42,7 @@
   button { cursor: pointer; border: 0; background: 0; }
   svg.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-  .wrap { width: min(1240px, calc(100% - 48px)); margin: 0 auto; }
+  .wrap { width: min(1320px, calc(100% - 64px)); margin: 0 auto; }
 
   .eyebrow {
     display: inline-flex;
@@ -71,8 +71,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 13px 24px;
-    border-radius: 8px;
+    padding: 13px 26px;
+    border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
     transition: background .2s, transform .2s, box-shadow .2s;
@@ -97,6 +97,11 @@
     background: transparent;
     backdrop-filter: none;
     border-bottom-color: transparent;
+  }
+  @media (min-width: 961px) {
+    .site-header.at-top .nav-item > a { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.35); }
+    .site-header.at-top .nav-item > a.active { border-bottom-color: #a4162f; }
+    .site-header.at-top .flags { border-left-color: rgba(255,255,255,.55); }
   }
   .head-row {
     display: flex;
@@ -197,8 +202,9 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(255,255,255,.55) 0, rgba(255,255,255,0) 130px),
-      linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 28%, rgba(255,255,255,.45) 46%, rgba(255,255,255,0) 64%);
+      radial-gradient(ellipse 560px 400px at 20% 52%, rgba(255,255,255,.62) 0%, rgba(255,255,255,.4) 55%, rgba(255,255,255,0) 100%),
+      linear-gradient(90deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.42) 20%, rgba(255,255,255,.16) 36%, rgba(255,255,255,0) 50%),
+      linear-gradient(180deg, rgba(10,20,48,.5) 0, rgba(10,20,48,0) 130px);
   }
   .hero-inner {
     position: relative;
@@ -220,16 +226,19 @@
   }
   .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(34px, 4.1vw, 50px);
+    font-size: clamp(34px, 3.4vw, 49px);
     font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.015em;
-    max-width: 11.5em;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    max-width: 9.3em;
     margin-bottom: 20px;
   }
+  .hero h1, .hero .kicker { text-shadow: 0 0 18px rgba(255,255,255,.65); }
+  .hero h1 em { color: #7d1533; }
   .hero p.lead {
-    max-width: 38ch;
-    color: var(--ink-2);
+    max-width: 40ch;
+    color: #26324a;
+    text-shadow: 0 0 14px rgba(255,255,255,.7);
     font-size: 15px;
     margin-bottom: 26px;
   }
@@ -248,7 +257,7 @@
     padding: 20px 20px 22px;
     box-shadow: 0 24px 60px rgba(15, 30, 60, .22);
   }
-  .enquire .btn { margin-top: 18px; }
+  .enquire .btn { margin-top: 18px; border-radius: 10px; }
   .enquire h3 {
     font-family: var(--serif);
     font-size: 17px;
@@ -294,7 +303,7 @@
     font-size: 14px; outline: none; transition: border-color .2s;
   }
   .enq-dialog input:focus { border-color: var(--wine); }
-  .enq-dialog .btn { width: 100%; justify-content: center; margin-top: 10px; }
+  .enq-dialog .btn { width: 100%; justify-content: center; margin-top: 10px; border-radius: 10px; }
   .enq-dialog #enq-wa { margin-top: 18px; }
   .enq-dialog .btn[disabled] { opacity: .65; cursor: wait; transform: none; }
   .enq-close {
@@ -313,17 +322,19 @@
   .what { padding: 44px 0 64px; }
   .what-grid {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 40px;
+    grid-template-columns: 395px 1fr;
+    gap: 32px;
     align-items: center;
   }
+  .what-copy h2 { font-size: clamp(26px, 2.15vw, 31px); }
   .what-copy p { color: var(--ink-2); margin: 16px 0 24px; font-size: 15px; }
   .what-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .wc {
-    background: var(--card);
-    border: 1px solid #efe8ea;
+    background: #f6eff0;
+    border: 0;
     border-radius: 14px;
-    padding: 24px 22px;
+    padding: 24px 18px 22px 20px;
+    box-shadow: 0 1px 2px rgba(107, 15, 43, .04);
   }
   .ico {
     width: 44px;
@@ -335,6 +346,7 @@
     place-items: center;
     font-size: 20px;
     margin-bottom: 16px;
+    box-shadow: 0 0 0 3px #f6eff0, 0 0 0 4px rgba(107, 15, 43, .25);
   }
   .wc h3 {
     font-family: var(--serif);
@@ -345,8 +357,8 @@
   }
   .wc li {
     position: relative;
-    padding: 4px 0 4px 22px;
-    font-size: 13px;
+    padding: 4px 0 4px 20px;
+    font-size: 12.5px;
     color: var(--ink-2);
     line-height: 1.45;
   }
@@ -436,6 +448,45 @@
   }
   .tile strong { display: block; font-size: 13px; font-weight: 600; line-height: 1.25; }
 
+  /* ---------- Valleycroft Farm ---------- */
+  .farm { background: #f6eff0; padding: 60px 0; }
+  .farm-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
+  .farm-copy h2 { font-size: clamp(26px, 2.3vw, 33px); }
+  .farm-copy > p { color: var(--ink-2); margin: 14px 0 18px; font-size: 15px; max-width: 46ch; }
+  .farm-copy ul { list-style: none; margin-bottom: 24px; }
+  .farm-copy li { position: relative; padding: 4px 0 4px 24px; font-size: 14px; color: var(--ink-2); }
+  .farm-copy li::before { content: '✓'; position: absolute; left: 0; top: 4px; font-size: 13px; font-weight: 700; color: var(--wine); }
+  .farm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  .farm-actions .ext { font-size: 13px; color: var(--ink-2); }
+  .farm-preview { display: block; position: relative; }
+  .farm-window {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15, 30, 60, .2);
+    border: 1px solid #e6dde0;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .farm-preview:hover .farm-window { transform: translateY(-3px); box-shadow: 0 30px 70px rgba(15, 30, 60, .26); }
+  .farm-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #f1ebed; border-bottom: 1px solid #e6dde0; }
+  .farm-dots { display: flex; gap: 6px; }
+  .farm-dots i { width: 10px; height: 10px; border-radius: 50%; background: #d8cdd1; }
+  .farm-url { flex: 1; background: #fff; border-radius: 999px; padding: 4px 14px; font-size: 12px; color: var(--ink-2); }
+  .farm-view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #fff; }
+  .farm-view iframe {
+    position: absolute; top: 0; left: 0;
+    width: 1280px; height: 800px;
+    border: 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+  }
+  .farm-tag {
+    position: absolute; right: 14px; bottom: 14px;
+    background: var(--wine); color: #fff;
+    font-size: 13px; font-weight: 600;
+    padding: 9px 16px; border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  }
   /* ---------- Testimonials ---------- */
   .quotes {
     position: relative;
@@ -581,6 +632,7 @@
     .what-grid { grid-template-columns: 1fr; gap: 28px; }
     .quotes-grid { grid-template-columns: 1fr; gap: 24px; }
     .foot-grid { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+    .farm-grid { grid-template-columns: 1fr; gap: 32px; }
     .foot-grid > div:nth-child(3) { grid-column: 1 / -1; border-left: 0; padding: 0; }
     .brandpanel { margin-left: 0; }
     .foot-grid > div:nth-child(odd) { padding-left: 0; }
@@ -630,6 +682,7 @@
   <defs>
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
     <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M2 12l4-4 3 1 3-2 4 2 3-1 3 4"/><path d="M6 8v8l3 3M18 8v8M9 9l5 5a1.6 1.6 0 0 1-2.2 2.2L9 13.5M13 17.5l1 1a1.6 1.6 0 0 0 2.2-2.2"/></symbol>
     <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
     <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
@@ -703,7 +756,7 @@
     <div class="wrap hero-inner">
       <div>
         <span class="kicker">Property Management · Zimbabwe &amp; South Africa</span>
-        <h1>We manage your property so you <em>don’t have to.</em></h1>
+        <h1>We manage your property so you<br> <em>don’t have to.</em></h1>
         <p class="lead">Alamait looks after tenants, rent collection, maintenance and owner reporting for residential, commercial and student properties, plus BnB short-stay in South Africa and Nyanga.</p>
         <a class="btn btn-wine" href="#contact">Talk to Us <svg class="ic"><use href="#i-arrow"/></svg></a>
       </div>
@@ -734,8 +787,28 @@
     </div>
 
     <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 58 C360 14 820 112 1440 30 L1440 54 C820 132 360 42 0 90Z" fill="#6b0f2b"/>
-      <path d="M0 90 C360 42 820 132 1440 54 L1440 121 L0 121Z" fill="#fff"/>
+      <defs>
+        <linearGradient id="wv-fill" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#5c0f27"/>
+          <stop offset=".3" stop-color="#861634"/>
+          <stop offset=".62" stop-color="#a31d3d"/>
+          <stop offset="1" stop-color="#7a1130"/>
+        </linearGradient>
+        <linearGradient id="wv-hi" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffd0da" stop-opacity=".55"/>
+          <stop offset=".35" stop-color="#ffe3e9" stop-opacity=".95"/>
+          <stop offset=".8" stop-color="#ffc1cf" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#ffc1cf" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="wv-tail" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#7a1130" stop-opacity=".95"/>
+          <stop offset="1" stop-color="#7a1130" stop-opacity=".3"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 38 C120 24 200 16 290 17 C480 19 700 55 860 74 C700 66 560 52 422 48 C250 46 100 62 0 80Z" fill="url(#wv-fill)"/>
+      <path d="M0 38 C120 24 200 16 290 17 C480 19 700 55 860 74" fill="none" stroke="url(#wv-hi)" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+      <path d="M0 80 C100 62 250 46 422 48 C560 52 700 66 860 74 C1050 76 1280 56 1440 34 L1440 121 L0 121Z" fill="#fff"/>
+      <path d="M860 74 C1050 76 1280 56 1440 34" fill="none" stroke="url(#wv-tail)" stroke-width="2" vector-effect="non-scaling-stroke"/>
     </svg>
   </section>
 
@@ -772,7 +845,7 @@
           </ul>
         </article>
         <article class="wc">
-          <div class="ico"><svg class="ic"><use href="#i-trend"/></svg></div>
+          <div class="ico"><svg class="ic"><use href="#i-hand"/></svg></div>
           <h3>To Sell &amp; Advise</h3>
           <ul>
             <li>Property sales and valuations</li>
@@ -826,6 +899,34 @@
     </div>
   </section>
 
+  <!-- Valleycroft Farm -->
+  <section class="farm" id="farm">
+    <div class="wrap farm-grid">
+      <div class="farm-copy">
+        <span class="eyebrow">Our Farm Stay · South Africa</span>
+        <h2>Visit <em>Valleycroft Farm</em></h2>
+        <p>Valleycroft is our farm in Hekpoort, Gauteng, about forty-five minutes from Johannesburg. Stay with us, host a celebration, or simply enjoy the countryside.</p>
+        <ul>
+          <li>Self-catering farm houses with WiFi and pool access</li>
+          <li>Weddings, retreats and private gatherings, garden and rustic barn</li>
+          <li>Poolside picnics and braais</li>
+        </ul>
+        <div class="farm-actions">
+          <a class="btn btn-wine" href="https://valleycroftfarm.com" target="_blank" rel="noopener">Visit Valleycroft Farm <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <span class="ext">valleycroftfarm.com</span>
+        </div>
+      </div>
+      <a class="farm-preview" href="https://valleycroftfarm.com" target="_blank" rel="noopener" aria-label="Open the Valleycroft Farm website">
+        <div class="farm-window">
+          <div class="farm-bar"><span class="farm-dots"><i></i><i></i><i></i></span><span class="farm-url">valleycroftfarm.com</span></div>
+          <div class="farm-view" id="farm-view">
+            <iframe src="https://valleycroftfarm.com" title="Preview of the Valleycroft Farm website" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+        </div>
+        <span class="farm-tag">Open website</span>
+      </a>
+    </div>
+  </section>
   <!-- Testimonials -->
   <section class="quotes on-dark" id="testimonials">
     <div class="wrap quotes-grid">
@@ -1034,6 +1135,15 @@
     });
   });
 
+  /* Scale the Valleycroft Farm preview to fit its frame */
+  (function () {
+    var view = document.getElementById('farm-view');
+    if (!view) return;
+    var frame = view.querySelector('iframe');
+    function fit() { frame.style.transform = 'scale(' + (view.clientWidth / 1280) + ')'; }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
   /* Highlight the current section in the nav */
   var spies = {};
   document.querySelectorAll('[data-spy]').forEach(function (a) { spies[a.dataset.spy] = a; });
