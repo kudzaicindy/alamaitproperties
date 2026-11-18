@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
 <title>Alamait Property Management | Zimbabwe &amp; South Africa</title>
 <meta name="description" content="Alamait is a property management company in Zimbabwe and South Africa. We handle tenants, rent collection, maintenance and owner reporting for residential, commercial and student properties.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,8 +111,9 @@
     gap: 24px;
     height: 76px;
   }
-  .brand { display: flex; align-items: center; gap: 12px; }
-  .brand img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; }
+  .brand { display: flex; align-items: center; gap: 11px; padding: 6px 0; }
+  .brand img { width: 50px; height: 50px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(107, 15, 43, .18)); }
+  .brand span { display: block; padding-left: 11px; border-left: 1px solid rgba(107, 15, 43, .28); }
   .brand b {
     display: block;
     font-family: var(--serif);
@@ -591,7 +593,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .brandpanel img { width: 88px; height: 88px; border-radius: 50%; margin-bottom: 12px; }
+  .brandpanel img { width: 92px; height: 92px; object-fit: contain; margin-bottom: 10px; }
   .brandpanel b {
     font-family: var(--serif);
     font-size: 32px;
@@ -656,16 +658,26 @@
     .dd { display: none !important; }
     .flags { display: none; }
     .burger { display: inline-flex; }
-    .hero-bg::after { background: linear-gradient(180deg, rgba(255,255,255,.93), rgba(255,255,255,.86)); }
-    .hero-inner { grid-template-columns: 1fr; padding: 117px 0 130px; gap: 28px; }
+    .site-header.at-top { background: rgba(255,255,255,.97); border-bottom-color: var(--line); }
+    .hero { margin-top: 0; min-height: 0; }
+    .hero-bg { background-position: 68% center; }
+    .hero-bg::after { background: linear-gradient(180deg, rgba(10,20,48,.22) 0%, rgba(10,20,48,.5) 50%, rgba(10,20,48,.72) 100%); }
+    .hero .kicker { color: #ffc2cf; text-shadow: none; }
+    .hero h1 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+    .hero h1 em { color: #ff9bb0; }
+    .hero p.lead { color: rgba(255,255,255,.94); text-shadow: 0 1px 10px rgba(0,0,0,.45); }
+    .hero-wave { width: 250%; max-width: none; right: auto; height: 84px; }
+    .hero-inner { grid-template-columns: 1fr; padding: 44px 0 110px; gap: 26px; }
     .hero h1 { max-width: none; }
-    .what-cards, .qcards { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-visual { min-height: 220px; }
     .about-visual::before { clip-path: none; }
     .about-visual img { clip-path: none; }
-    .about-copy { padding: 36px 0; max-width: none; }
-    .pillars { grid-template-columns: 1fr; }
+    .about-copy { padding: 36px 24px; max-width: none; }
+    .about-copy h2 { white-space: normal; }
+  }
+  @media (max-width: 760px) {
+    .what-cards, .qcards { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     .wrap { width: calc(100% - 32px); }
@@ -673,6 +685,11 @@
     .foot-grid { grid-template-columns: 1fr; }
     .foot-grid > div { padding: 0 !important; border-left: 0 !important; }
     .foot-row { flex-direction: column; text-align: center; }
+    .pillars { grid-template-columns: 1fr; }
+    .about-copy { padding: 32px 16px; }
+    .foot-grid > .brandpanel { padding: 28px 20px 190px !important; }
+    .hero-inner { padding-top: 36px; }
+    .farm { padding: 44px 0; }
   }
 </style>
 </head>
@@ -699,7 +716,7 @@
 <header class="site-header">
   <div class="wrap head-row">
     <a class="brand" href="#top" aria-label="Alamait Property Management">
-      <img src="images/logo.png" alt="">
+      <img src="images/logo-mark.png" alt="">
       <span><b>ALAMAIT</b><small>Property Management</small></span>
     </a>
 
@@ -982,12 +999,12 @@
       <div class="contact">
         <h2>Let’s talk about your property.</h2>
         <p>Tell us what you own and what you need managed.</p>
-        <div class="crow"><svg class="ic"><use href="#i-pin"/></svg><span>Unit 11, Mason Court, Selous Ave, Harare</span></div>
+        <div class="crow"><svg class="ic"><use href="#i-pin"/></svg><span>1 Ardmore Close, Greendale, Harare</span></div>
         <div class="crow"><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+263786209200">+263 786 209 200</a></div>
-        <div class="crow"><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:info@alamait.com">info@alamait.com</a></div>
+        <div class="crow"><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:admin@alamait.com">admin@alamait.com</a></div>
         <div class="actions">
           <a class="btn btn-wa" href="https://wa.me/263786209200?text=Hello%20Alamait%2C%20I%27d%20like%20to%20enquire%20about%20property%20management." target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> WhatsApp Us</a>
-          <a class="btn btn-wine" href="mailto:info@alamait.com?subject=Property%20enquiry">Email Alamait <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-wine" href="mailto:admin@alamait.com?subject=Property%20enquiry">Email Alamait <svg class="ic"><use href="#i-arrow"/></svg></a>
           <a class="link" href="alamaitcompanyprofile.html">View Company Profile →</a>
         </div>
       </div>
@@ -995,7 +1012,7 @@
       <div class="brandpanel">
         <img class="skyline" src="images/skyline.jpg" alt="">
         <div class="bp-inner">
-          <img src="images/logo.png" alt="">
+          <img src="images/logo-mark.png" alt="">
           <b>ALAMAIT</b>
           <small>Property Management</small>
           <p>Residential · Commercial · Student · Sales · Consultancy<br>Zimbabwe · South Africa</p>
@@ -1010,7 +1027,7 @@
     <div>© 2026 Alamait Pvt Ltd. All rights reserved.</div>
     <div class="tagline"><span>Manage</span><i>|</i><span>Maintain</span><i>|</i><span>Maximise</span></div>
     <div class="social">
-      <a href="mailto:info@alamait.com" aria-label="Email Alamait"><svg class="ic"><use href="#i-mail"/></svg></a>
+      <a href="mailto:admin@alamait.com" aria-label="Email Alamait"><svg class="ic"><use href="#i-mail"/></svg></a>
       <a href="https://wa.me/263786209200" target="_blank" rel="noopener" aria-label="WhatsApp Alamait"><svg class="ic"><use href="#i-chat"/></svg></a>
     </div>
   </div>
@@ -1043,7 +1060,7 @@
 
   /* Enquiry card: WhatsApp message or a real email, both with the visitor's details */
   var WHATSAPP_NUMBER = '263786209200';
-  var EMAIL_TO = 'info@alamait.com';
+  var EMAIL_TO = 'admin@alamait.com';
   var enquiry = document.getElementById('enquiry');
   var statusEl = document.getElementById('enq-status');
   var waBtn = document.getElementById('enq-wa');
